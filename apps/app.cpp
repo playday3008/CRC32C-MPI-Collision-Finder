@@ -276,9 +276,9 @@ int main(int argc, char** argv)
         combo(alphabet, alphabet_len, length, line);
 
         if (flip)
-            length += size - (size - rank) + (size - (length % size));
+            length += size + rank - length % size;
         else
-            length += size - rank + (size - (length % size)) - 1;
+            length += 2 * size - rank - length % size - 1;
         flip = !flip;
     } while (true);
 }
